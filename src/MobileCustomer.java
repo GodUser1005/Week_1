@@ -5,8 +5,10 @@ public class MobileCustomer extends Customer{
     @Override
     public void printUserInfo() {
         System.out.printf(
-                "접속 경로: Mobile\n" +
-                "이름: %s\n" +
-                "등급: %s\n",getName(),getGrade().name());
+                """
+                        접속 경로: Mobile
+                        이름: %s
+                        등급: %s
+                        """,getName(),getGrade().name());
     }
 }
