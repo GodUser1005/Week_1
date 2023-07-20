@@ -1,18 +1,22 @@
-public abstract class Customer implements PaymentWithBonus,PaymentWithDiscount{
+public abstract class Customer {
 
     // State
     private String name;
     private Grade grade;
-    private DiscountWay discountWay;
+    private DiscountService discountService;
 
     // Creation
-    Customer(String name, Grade grade,DiscountWay discountWay){
+    Customer(String name, Grade grade,DiscountService discountService){
         this.name = name;
         this.grade = grade;
-        this.discountWay = discountWay;
+        this.discountService = discountService;
     }
     // Operation
     public abstract void printUserInfo();
+
+    public void printPayment(int price){
+        System.out.print(discountService.returnPaymentInfo(price,this));
+    }
 
 
 
@@ -31,10 +35,10 @@ public abstract class Customer implements PaymentWithBonus,PaymentWithDiscount{
         return grade;
     }
 
-    public void setDiscountWay(DiscountWay discountWay) {
-        this.discountWay = discountWay;
+    public void setDiscountService(DiscountService discountService) {
+        this.discountService = discountService;
     }
-    public DiscountWay getDiscountWay() {
-        return discountWay;
+    public DiscountService getDiscountService() {
+        return discountService;
     }
 }
