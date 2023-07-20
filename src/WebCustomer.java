@@ -5,9 +5,9 @@ public class WebCustomer extends Customer{
     }
     @Override
     public void printUserInfo() {
-        System.out.print( String.format(
+        System.out.printf(
                 "접속 경로: Web\n" +
                 "이름: %s\n" +
-                "등급: %s\n",getName(),getGrade().name()));
+                "등급: %s\n",getName(),getGrade().name());
     }
 }
